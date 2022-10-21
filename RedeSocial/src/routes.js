@@ -9,7 +9,7 @@ const Stack = createStackNavigator();
 
 export default function Routes() {
   return (
-    <NavigationContainer>
+    <NavigationContainer backgroundColor="transparent" translucent>
       <Stack.Navigator>
         <Stack.Screen
           name="Feed"

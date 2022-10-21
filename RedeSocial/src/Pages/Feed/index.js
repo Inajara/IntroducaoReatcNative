@@ -1,17 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { FlatList } from 'react-native';
-
 import {
-  Avatar,
-  Container,
-  Description,
-  Header,
-  Loading,
-  Name,
-  Post,
-} from './styles';
+  FlatList,
+  Image,
+  View,
+  Text,
+  ActivityIndicator,
+  ImageBackground,
+} from 'react-native';
+
 import api from '../../Services/api';
-import FeedImage from '../../Components/FeedImage';
+import { styles } from './styles';
 
 export default function Feed() {
   const [feed, setFeed] = useState([]);
@@ -36,7 +34,7 @@ export default function Feed() {
   };
 
   return (
-    <Container>
+    <View>
       <FlatList
         key="list"
         data={feed}
@@ -47,24 +45,32 @@ export default function Feed() {
         showsVerticalScrollIndicator={false}
         onRefresh={refreshList}
         refreshing={refresh}
-        ListFooterComponent={loading && <Loading />}
+        ListFooterComponent={loading && <ActivityIndicator />}
         renderItem={({ item }) => (
-          <Post>
-            <Header>
-              <Avatar source={{ uri: item.author.avatar }} />
-              <Name>{item.author.name}</Name>
-            </Header>
-            {/* <FeedImage
-              aspectRatio={item.aspectRatio}
+          <View style={styles.post}>
+            <View style={styles.header}>
+              <Image
+                style={styles.image}
+                source={{ uri: item.author.avatar }}
+              />
+              <Text style={styles.name}>{item.author.name}</Text>
+            </View>
+            <ImageBackground
+              style={styles.feedImage}
               smallSource={{ uri: item.image }}
               source={{ uri: item.small }}
-            /> */}
-            <Description>
-              <Name>{item.author.name}</Name> {item.description}
-            </Description>
-          </Post>
+              resizeMode="contain"
+              blurRadius={3}
+            />
+            <View>
+              <Text>
+                <Text style={styles.description}>{item.author.name}</Text>{' '}
+                {item.description}
+              </Text>
+            </View>
+          </View>
         )}
       />
-    </Container>
+    </View>
   );
 }

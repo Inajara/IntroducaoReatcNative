@@ -1,30 +1,43 @@
-import { ActivityIndicator, Image, Text, View } from 'react-native';
-import styled from 'react-native-styled-components';
+import { StyleSheet } from 'react-native';
 
-export const Container = styled(View, {});
-export const Post = styled(View, {
-  marginTop: 10,
-});
-export const Header = styled(View, {
-  padding: 15,
-  flexDirection: 'row',
-  alignItems: 'center',
-});
-export const Avatar = styled(Image, {
-  width: 32,
-  height: 32,
-  borderRadius: 16,
-  marginRight: 10,
-});
-export const Name = styled(Text, {
-  fontWeight: '600',
-});
-export const Description = styled(Text, {
-  padding: 15,
-  lineHeight: 18,
-});
-export const Loading = styled(ActivityIndicator, {
-  size: 'small',
-  color: '#999',
-  margin: 30,
-});
+export const styles = StyleSheet.create({
+  small: {
+    width: '100%',
+    backgroundColor: '#eee',
+  },
+  original: {
+    width: '100%',
+  },
+  post: {
+    marginTop: 10,
+  },
+  header: {
+    padding: 15,
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  image: {
+    width: 32,
+    height: 32,
+    borderRadius: 16,
+    marginRight: 10,
+  },
+  name: {
+    fontWeight: '600',
+  },
+  description: {
+    padding: 15,
+    lineHeight: 18,
+  },
+  loading: {
+    color: '#999',
+    margin: 30,
+    size: 'small',
+  },
+  feedImage: {
+    width: '100%',
+    backgroundColor: '#eee',
+    aspectRatio: 1,
+  },
+})
+
