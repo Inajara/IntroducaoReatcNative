@@ -64,7 +64,8 @@ export default function Feed() {
             />
             <View style={styles.description}>
               <Text style={styles.description}>
-                <Text style={styles.description}>{item.author.name}</Text>{' '}
+                <Text style={styles.description}>{item.author.name}</Text>
+                {' \n'}
                 {item.description}
               </Text>
             </View>
