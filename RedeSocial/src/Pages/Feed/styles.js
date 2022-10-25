@@ -28,6 +28,8 @@ export const styles = StyleSheet.create({
   description: {
     padding: 15,
     lineHeight: 18,
+    fontSize: 16,
+    fontWeight: '500',
   },
   loading: {
     color: '#999',

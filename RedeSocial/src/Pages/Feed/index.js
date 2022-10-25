@@ -57,13 +57,13 @@ export default function Feed() {
             </View>
             <ImageBackground
               style={styles.feedImage}
-              smallSource={{ uri: item.image }}
-              source={{ uri: item.small }}
+              smallSource={{ uri: item.small }}
+              source={{ uri: item.image }}
               resizeMode="contain"
               blurRadius={3}
             />
-            <View>
-              <Text>
+            <View style={styles.description}>
+              <Text style={styles.description}>
                 <Text style={styles.description}>{item.author.name}</Text>{' '}
                 {item.description}
               </Text>

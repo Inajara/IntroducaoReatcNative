@@ -15,7 +15,7 @@ export const styles = StyleSheet.create({
     margin: 10,
   },
   image: {
-    maxHeight: 50,
+    maxHeight: 45,
     maxWidth: 200,
   },
 });
